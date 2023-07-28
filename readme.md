@@ -1,5 +1,9 @@
 # Language Switcher
 
+# DEMO
+
+<a href="https://alexqs96.github.io/translate-inline" target="_blank" rel="noreferrer noopener">alexqs96.github.io/translate-inline/</a>
+
 ## Functions
 - #### Load Language: This function loads the specified language for translation.
 - #### Switch for Language: This function allows you to switch between the available languages.
