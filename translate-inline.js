@@ -1,9 +1,13 @@
+let currentLang = ""
+
 if (Array.isArray(translateOptions) && translateOptions.length > 1) {
   // Translate the page language when the page is loaded or set the defaultLanguage on localStorage
   if (localStorage.lang && translateOptions.includes(localStorage.lang)) {
     translateTags(localStorage.lang);
+    currentLang = localStorage.lang
   } else {
     localStorage.lang = translateOptions[0];
+    currentLang = localStorage.lang
   }
 
   /**
@@ -19,6 +23,7 @@ if (Array.isArray(translateOptions) && translateOptions.length > 1) {
             ? translateOptions[1]
             : translateOptions[0];
         translateTags(localStorage.lang);
+        currentLang = localStorage.lang
       }
     } catch (error) {
       console.error(
@@ -44,6 +49,7 @@ if (Array.isArray(translateOptions) && translateOptions.length > 1) {
       if (translateOptions.includes(option)) {
         localStorage.lang = option;
         translateTags(option);
+        currentLang = option
       }
     } catch (error) {
       console.error(
@@ -83,9 +89,9 @@ if (Array.isArray(translateOptions) && translateOptions.length > 1) {
         document.querySelectorAll(`[data-${translateOptions[0]}]`).length &&
         lang
       ) {
-        document.querySelectorAll(`[data-${lang}]`).forEach((htmlTagFound) => {
+        for (const htmlTagFound of document.querySelectorAll(`[data-${lang}]`)) {
           htmlTagFound.textContent = htmlTagFound.getAttribute(`data-${lang}`);
-        });
+        }
       } else {
         return null;
       }
