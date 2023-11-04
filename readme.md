@@ -88,5 +88,7 @@
 
 ```
 
+### Or use currentLang variable to get the current language value, for example: "es" or "en"
+
 ### Important: this method might increase your HTML size, but it can make managing translations on your page easier.
 ### Any suggestions or improvements are welcome! Feel free to check out my portfolio to contact me.
